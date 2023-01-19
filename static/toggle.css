@@ -5,7 +5,7 @@
   --transition-time: 0.3s ease-out;
   --scale-up: scale(1.05);
   --scale-down: scale(0.95);
-  --child-width: 80px;
+  --child-width: 30px;
   --globe-width: 25px;
 }
 

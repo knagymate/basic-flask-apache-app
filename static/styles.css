@@ -7,3 +7,7 @@
   font-family: "Poppins", sans-serif;
   /* outline: red solid 1px; */
 }
+
+body {
+  padding-top: 80px;
+}
