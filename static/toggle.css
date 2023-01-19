@@ -1,0 +1,82 @@
+:root {
+  --color-1: white;
+  --color-2: black;
+  --color-3: grey;
+  --transition-time: 0.3s ease-out;
+  --scale-up: scale(1.05);
+  --scale-down: scale(0.95);
+  --child-width: 80px;
+  --globe-width: 25px;
+}
+
+body {
+  background-color: var(--color-1);
+}
+
+.toggle_parent {
+  cursor: pointer;
+  align-items: center;
+  border: none;
+  display: flex;
+  background-color: transparent;
+  transition: var(--transition-time);
+}
+
+.toggle_child_hu {
+  width: var(--child-width);
+  transition: var(--transition-time);
+}
+
+.toggle_child_en {
+  width: var(--child-width);
+  transition: var(--transition-time);
+}
+
+.toggle_text_hu {
+  margin: 0;
+  color: var(--color-2);
+  transition: var(--transition-time);
+  font-size: 15pt;
+}
+
+.toggle_text_en {
+  margin: 0;
+  color: var(--color-3);
+  transition: var(--transition-time);
+  font-size: 15pt;
+}
+
+.toggle_parent[value="en"] .toggle_child_hu {
+  transform: translateX(100%);
+}
+
+.toggle_parent[value="en"] .toggle_child_en {
+  transform: translateX(-100%);
+}
+
+.toggle_parent[value="en"] .toggle_text_hu {
+  color: var(--color-3);
+}
+
+.toggle_parent[value="en"] .toggle_text_en {
+  color: var(--color-2);
+}
+
+.toggle_parent:hover {
+  transform: var(--scale-up);
+}
+
+.toggle_parent:active {
+  transform: var(--scale-down);
+  opacity: 0.3;
+}
+
+.toggle_child_globe {
+  padding: 5px;
+  display: flex;
+}
+
+[class="bi bi-globe"] {
+  width: var(--globe-width);
+  color: var(--color-2);
+}
