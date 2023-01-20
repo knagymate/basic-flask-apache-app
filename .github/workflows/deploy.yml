@@ -12,4 +12,4 @@ jobs:
         known_hosts: ${{ secrets.KNOWN_HOSTS }}
         if_key_exists: fail # replace / ignore / fail; optional (defaults to fail)
     - name: rsync over SSH
-      run: rsync -avz . root@193.160.119.195:/var/www/test/
+      run: rsync -v -avz . root@193.160.119.195:/var/www/test
