@@ -1,7 +1,38 @@
 name: first-github-action
 on: [push]
 jobs:
-  write-to-console:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - run: echo ${{ secrets.VPS_IP_ADDRESS }}
+    - uses: actions/checkout@v2
+    - name: rsync deployments
+      uses: burnett01/rsync-deployments@5.2.1
+      with:
+        switches: -avzr --delete --exclude="" --include="" --filter=""
+        path: src/
+        remote_path: /var/www/html/
+        remote_host: knagymate.com
+        remote_port: 5555
+        remote_user: debian
+        remote_key: ${{ secrets.DEPLOY_KEY }}
+
+name: deploy
+on: [push]
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+
+      - name: Install SSH Key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          known_hosts: unnecessary
+
+      - name: Adding Known Hosts
+        run: ssh-keyscan -p ${{ secrets.SSH_PORT}} -H ${{ secrets.SSH_HOST }}  >> ~/.ssh/known_hosts
+
+      - name: Deploy with rsync
+        run: rsync -avz -e "ssh -p ${{ secrets.SSH_PORT }}" README.md ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/var/www/
