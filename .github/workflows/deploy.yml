@@ -19,7 +19,7 @@ jobs:
                     DEPLOY_KEY: ${{secrets.VPS_SSH_KEY}}
                 with:
                     flags: '-avz'
-                    src: 'dist/'
+                    src: '.'
                     dest: 'root@"${{secrets.VPS_IP_ADDRESS}}":/var/www/test'
 
             -   name: Display status from deploy
