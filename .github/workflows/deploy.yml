@@ -1,26 +1,7 @@
-name: Deploy
-
-on:
-  push:
+name: first-github-action
+on: [push]
 jobs:
-    build:
-        runs-on: ubuntu-latest
-        timeout-minutes: 30
-        steps:
-            -   run: ls -la
-            -   uses: actions/checkout@master
-
-            -   run: sudo apt-get install rsync
-
-            -   name: Deploy theme on server
-                id: deploy_theme
-                uses: Pendect/action-rsyncer@v1.1.0
-                env:
-                    DEPLOY_KEY: ${{secrets.VPS_SSH_KEY}}
-                with:
-                    flags: '-avz'
-                    src: '.'
-                    dest: 'root@"${{secrets.VPS_IP_ADDRESS}}":/var/www/test'
-
-            -   name: Display status from deploy
-                run: echo "${{ steps.deploy.outputs.status }}"
+  write-to-console:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo 'Hello world!'
