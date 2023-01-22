@@ -1,13 +1,61 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap");
+
+@font-face {
+  font-family: "Darling";
+  src: url("darling.woff") format("woff");
+}
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
   /* outline: red solid 1px; */
 }
 
+h1 {
+  font-family: "Darling", sans-serif;
+  font-size: 25pt;
+  margin: 10px;
+  color: #344e41;
+}
+
+.navbar-brand {
+  font-family: "Darling", sans-serif;
+}
+
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:visited,
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:active,
+.btn-secondary:visited {
+  background-color: #344e41 !important;
+}
+
 body {
-  padding-top: 80px;
+  padding-top: 70px;
+  background-color: #dad7cd;
+}
+
+.container {
+  background-color: white;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.hidden {
+  opacity: 0;
+  filter: blur(5px);
+  transition: all 0.5s;
+}
+
+.show {
+  opacity: 1;
+  filter: blur(0px);
 }
