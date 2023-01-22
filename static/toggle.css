@@ -9,9 +9,9 @@
   --globe-width: 25px;
 }
 
-body {
+/* body {
   background-color: var(--color-1);
-}
+} */
 
 .toggle_parent {
   cursor: pointer;

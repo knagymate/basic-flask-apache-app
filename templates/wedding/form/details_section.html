@@ -1,0 +1,160 @@
+<div class="container bg-light p-3 shadow-sm mt-3 rounded-3">
+  <h1>Details</h1>
+  <p>Please help us to answer on a few qustions below.</p>
+  <hr class="solid" />
+  <div class="row">
+    <div class="col">
+      <p class="text-body m-0 fw-bold">
+        Do you need a shuttle service from the Church to the Wedding?
+      </p>
+      <p class="text-secondary m-0">
+        The shuttle will leave from the Church at 16:30
+      </p>
+    </div>
+    <div class="col-auto text-end">
+      <input
+        id="shuttle_toggle"
+        type="checkbox"
+        data-toggle="toggle"
+        unchecked
+        data-onlabel="Yes"
+        data-offlabel="No"
+      />
+    </div>
+  </div>
+  <div id="shuttle_question">
+    <hr class="solid" />
+    <div class="row">
+      <div class="col">
+        <p class="text-body m-0 fw-bold">
+          How many persons need a shuttle service?
+        </p>
+        <p class="text-secondary m-0">Enter a number</p>
+      </div>
+      <div class="col-auto text-end">
+        <input
+          type="number"
+          class="form-control"
+          id="shuttle_num"
+          style="width: 120px"
+          placeholder="1"
+        />
+        <div class="valid-feedback">Looks good!</div>
+        <div class="invalid-feedback">Required field!</div>
+      </div>
+    </div>
+  </div>
+  <hr class="solid" />
+  <div class="row">
+    <div class="col">
+      <p class="text-body m-0 fw-bold">Do you have any food intolerances?</p>
+      <p class="text-secondary m-0">
+        If yes, please let us know what you can't eat
+      </p>
+    </div>
+    <div class="col-auto text-end">
+      <input
+        id="food_toggle"
+        type="checkbox"
+        data-toggle="toggle"
+        unchecked
+        data-onlabel="Yes"
+        data-offlabel="No"
+      />
+    </div>
+  </div>
+  <div id="food_question">
+    <hr class="solid" />
+    <div class="row">
+      <div class="col">
+        <p class="text-body m-0 fw-bold">
+          Describe what kind of food intolerances do you have
+        </p>
+        <!-- <p class="text-secondary m-0">Who and what</p> -->
+      </div>
+      <div class="col-sm">
+        <textarea
+          class="form-control"
+          id="food_comment"
+          rows="2"
+          placeholder="Describe here how many persons are affected with which food intolerances"
+        ></textarea>
+      </div>
+    </div>
+  </div>
+  <hr class="solid" />
+  <div class="row">
+    <div class="col">
+      <p class="text-body m-0 fw-bold">
+        Do you need an accomodation after the Wedding?
+      </p>
+      <p class="text-secondary m-0">
+        We have reserved a few rooms in the Hotel for you
+      </p>
+    </div>
+    <div class="col-auto text-end">
+      <input
+        id="hotel_toggle"
+        type="checkbox"
+        data-toggle="toggle"
+        unchecked
+        data-onlabel="Yes"
+        data-offlabel="No"
+      />
+    </div>
+  </div>
+  <div id="hotel_question">
+    <hr class="solid" />
+    <div class="row">
+      <div class="col">
+        <p class="text-body m-0 fw-bold">How many persons need accomodation?</p>
+        <p class="text-secondary m-0">Enter a number</p>
+      </div>
+      <div class="col-auto text-end">
+        <input
+          type="number"
+          class="form-control"
+          id="hotel_num"
+          style="width: 120px"
+          placeholder="1"
+        />
+      </div>
+    </div>
+  </div>
+  <hr class="solid" />
+</div>
+<script>
+  $("#shuttle_question").hide();
+  $("#food_question").hide();
+  $("#hotel_question").hide();
+  $(function () {
+    $("#shuttle_toggle").change(function () {
+      if ($(this).prop("checked")) {
+        $("#shuttle_question").show();
+      } else {
+        $("#shuttle_question").hide();
+      }
+    });
+  });
+  $(function () {
+    $("#food_toggle").change(function () {
+      if ($(this).prop("checked")) {
+        $("#food_question").show();
+      } else {
+        $("#food_question").hide();
+      }
+    });
+  });
+  $(function () {
+    $("#hotel_toggle").change(function () {
+      if ($(this).prop("checked")) {
+        $("#hotel_question").show();
+      } else {
+        $("#hotel_question").hide();
+      }
+    });
+  });
+  document.querySelector("#shuttle_toggle").bootstrapToggle();
+  document.querySelector("#food_toggle").bootstrapToggle();
+  document.querySelector("#hotel_toggle").bootstrapToggle();
+</script>

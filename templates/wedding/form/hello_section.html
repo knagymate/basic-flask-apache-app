@@ -1,0 +1,76 @@
+<div id="hello_section" class="container p-3 shadow-sm rounded-3">
+  <h1>Hello</h1>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam deleniti alias
+    ea nisi magni. Quas, quod amet eaque modi veniam vero, alias ipsa earum
+    officiis laborum consectetur pariatur reiciendis hic id quis tempora! Nihil,
+    commodi alias saepe doloribus facilis sed nulla laboriosam asperiores, rerum
+    reprehenderit distinctio vero, ratione voluptatum voluptatem.
+  </p>
+  <div class="row">
+    <div class="col">
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="name_input" required />
+        <label for="name_input">Name</label>
+        <div class="valid-feedback">Looks good!</div>
+        <div class="invalid-feedback">Required field!</div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-floating mb-3">
+        <input type="email" class="form-control" id="email_input" required />
+        <label for="email_input">Email</label>
+        <div class="valid-feedback">Looks good!</div>
+        <div class="invalid-feedback">Required field!</div>
+      </div>
+    </div>
+  </div>
+  <hr class="solid" />
+  <div class="row">
+    <div class="col">
+      <p class="text-body m-0 fw-bold">Can you join us for the Wedding?</p>
+      <p class="text-secondary m-0">Friday, 23rd of June @ 17:30</p>
+    </div>
+    <div class="col text-end align-middle">
+      <input
+        id="join_toggle"
+        type="checkbox"
+        data-toggle="toggle"
+        checked
+        data-onlabel="Yes"
+        data-offlabel="No"
+      />
+    </div>
+  </div>
+  <hr class="solid" />
+</div>
+<script>
+  $(function () {
+    $("#join_toggle").change(function () {
+      if ($(this).prop("checked")) {
+        $("#guests_section").show();
+        $("#details_section").show();
+      } else {
+        $("#guests_section").hide();
+        $("#details_section").hide();
+      }
+      console.log($(this).prop("checked"));
+    });
+  });
+  document.querySelector("#join_toggle").bootstrapToggle();
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      } else {
+        entry.target.classList.remove("show");
+      }
+    });
+  });
+
+  const hiddenElements = document.querySelectorAll(".hidden");
+  hiddenElements.forEach((element) => {
+    observer.observe(element);
+  });
+</script>
