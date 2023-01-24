@@ -3,7 +3,7 @@
 
 @font-face {
   font-family: "Darling";
-  src: url("darling.woff") format("woff");
+  src: url("../fonts/darling.woff") format("woff");
 }
 
 * {

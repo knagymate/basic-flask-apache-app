@@ -8,7 +8,7 @@ if (userLang.includes("hu")) {
 }
 
 function translate(lang) {
-  fetch("../static/lang.json")
+  fetch("../static/js/lang.json")
     .then((response) => response.json())
     .then((json) =>
       document.querySelectorAll("[loc-key]").forEach((element) => {
