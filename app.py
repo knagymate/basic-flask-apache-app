@@ -56,7 +56,7 @@ def get_guests():
         for guest in guests:
             if guest.user_id == user.id:
                 user_jsons.append(
-                    {"id": guest.id, "name": guest.name, "age": guest.age}
+                    {"id": guest.user_id, "name": guest.name, "age": guest.age}
                 )
     return user_jsons
 
