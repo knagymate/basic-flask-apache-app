@@ -4,7 +4,6 @@ function translate(lang) {
     .then((json) =>
       document.querySelectorAll("[loc-key]").forEach((element) => {
         let key = element.getAttribute("loc-key");
-        console.log(key);
         element.innerHTML = json[key][lang];
       })
     );
@@ -20,11 +19,13 @@ function lang_btn_callback() {
   translate(lang_btn.value);
 }
 
-var userLang = navigator.language || navigator.userLanguage;
-if (userLang.includes("hu")) {
-  document.getElementById("lang_btn").value = "hu";
-  translate("hu");
-} else {
-  document.getElementById("lang_btn").value = "en";
-  translate("en");
-}
+$(document).ready(function () {
+    var userLang = navigator.language || navigator.userLanguage;
+    if (userLang.includes("hu")) {
+        document.getElementById("lang_btn").value = "hu";
+        translate("hu");
+    } else {
+        document.getElementById("lang_btn").value = "en";
+        translate("en");
+    }
+});

@@ -69,18 +69,6 @@
       });
       // Example starter JavaScript for disabling form submissions if there are invalid fields
       (function () {
-        //
-        // $.ajax({
-        //   type: "POST",
-        //   url: "submit_form",
-        //   data: { name: $("#name_input").val(), key_2: "value" },
-        //   success: function (response) {
-        //     console.log(response);
-        //   },
-        // });
-        // //
-        // ("use strict");
-
         // Fetch all the forms we want to apply custom Bootstrap validation styles to
         var forms = document.querySelectorAll(".needs-validation");
 
@@ -94,14 +82,12 @@
                   return this.value;
                 })
                 .get();
-              console.log(name_arr);
 
               var age_arr = $("select[id=guest_age_input]")
                 .map(function () {
                   return this.value;
                 })
                 .get();
-              console.log(age_arr);
 
               const guests = [];
               name_arr.forEach((name, index) => {
@@ -110,8 +96,6 @@
                 guest["age"] = age_arr[index];
                 guests.push(guest);
               });
-              console.log(guests);
-              // });
 
               if (!form.checkValidity()) {
                 event.preventDefault();

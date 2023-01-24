@@ -44,8 +44,7 @@
   $(document).ready(function () {
     $("button").click(function () {
       if ($(this)[0].id == "remove_guest_btn") {
-        console.log($(this)[0].id);
-        console.log($(this).parent().parent().parent().remove());
+        $(this).parent().parent().parent().remove();
       }
     });
   });

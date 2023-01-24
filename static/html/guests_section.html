@@ -24,13 +24,12 @@
   </div>
 </div>
 <script>
-    var i = 0;
-    $("#add_guest_btn").click(function () {
-      i = i + 1;
-      $("#guest_section").append('<div id="guest_' + i + '"></div>');
-      $("#guest_" + i).load("static/html/guest_section.html");
-      $(document).ready(function () {
+  var i = 0;
+  $("#add_guest_btn").click(function () {
+    i = i + 1;
+    $("#guest_section").append('<div id="guest_' + i + '"></div>');
+    $("#guest_" + i).load("static/html/guest_section.html", function () {
       translate(document.getElementById("lang_btn").value);
-      });
     });
+  });
 </script>
