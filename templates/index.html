@@ -29,7 +29,7 @@
   <body>
     <div id="navbar_section"></div>
 
-    <form class="needs-validation" novalidate>
+    <form class="needs-validation" action="static/success.html" novalidate>
       <div id="hello_section"></div>
       <div id="guests_section"></div>
       <div id="details_section"></div>
@@ -142,7 +142,7 @@
                     guests: guests,
                   }),
                   success: function (response) {
-                    console.log(response);
+                    console.log("Success!");
                   },
                 });
               }

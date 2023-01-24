@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, jsonify, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
@@ -33,6 +33,37 @@ def handle_form():
         db.session.add(user)
         db.session.commit()
     return "Form submitted!"
+
+
+@app.route("/get_guests", methods=["GET"])
+def get_guests():
+    guests = Guest.query.all()
+    users = User.query.all()
+    user_jsons = []
+    for user in users:
+        user_json = {
+            "id": user.id,
+            "guests": [],
+            "name": user.name,
+            "email": user.email,
+            "is_join": user.is_join,
+            "shuttle_num": user.shuttle_num if user.is_shuttle else 0,
+            "food_comment": user.food_comment if user.is_food else "",
+            "hotel_num": user.hotel_num if user.is_hotel else 0,
+            "comment": user.comment,
+        }
+        user_jsons.append(user_json)
+        for guest in guests:
+            if guest.user_id == user.id:
+                user_jsons.append(
+                    {"id": guest.id, "name": guest.name, "age": guest.age}
+                )
+    return user_jsons
+
+
+@app.route("/show_guests", methods=["GET"])
+def show_guests():
+    return render_template("show_guests.html")
 
 
 class Guest(db.Model):
