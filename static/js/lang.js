@@ -1,29 +1,30 @@
-var userLang = navigator.language || navigator.userLanguage;
-if (userLang.includes("hu")) {
-  document.getElementById("btn").value = "hu";
-  translate("hu");
-} else {
-  document.getElementById("btn").value = "en";
-  translate("en");
-}
-
 function translate(lang) {
-  fetch("../static/js/lang.json")
+  fetch("../static/fixtures/lang.json")
     .then((response) => response.json())
     .then((json) =>
       document.querySelectorAll("[loc-key]").forEach((element) => {
         let key = element.getAttribute("loc-key");
+        console.log(key);
         element.innerHTML = json[key][lang];
       })
     );
 }
 
-function btn_callback() {
-  var btn = document.getElementById("btn");
-  if (btn.value === "hu") {
-    btn.value = "en";
+function lang_btn_callback() {
+  var lang_btn = document.getElementById("lang_btn");
+  if (lang_btn.value === "hu") {
+    lang_btn.value = "en";
   } else {
-    btn.value = "hu";
+    lang_btn.value = "hu";
   }
-  translate(btn.value);
+  translate(lang_btn.value);
+}
+
+var userLang = navigator.language || navigator.userLanguage;
+if (userLang.includes("hu")) {
+  document.getElementById("lang_btn").value = "hu";
+  translate("hu");
+} else {
+  document.getElementById("lang_btn").value = "en";
+  translate("en");
 }

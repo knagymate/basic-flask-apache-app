@@ -1,22 +1,126 @@
 {
-  "form_title": {
-    "en": "Confirmation",
-    "hu": "Megerősítés"
+  "yes": {
+    "en": "Yes",
+    "hu": "Igen"
   },
-  "form_text": {
-    "en": "Dear family, friends! We would like to know how many of you can attend on the Big Day!",
-    "hu": "Kedves család, barátok! Szeretnénk megtudni, hogy hányan tudtok résztvenni a Nagy napon!"
+  "no": {
+    "en": "No",
+    "hu": "Nem"
   },
-  "form_name_text": {
+  "name": {
     "en": "Name",
     "hu": "Név"
   },
-  "form_comment_text": {
-    "en": "Comment",
-    "hu": "Megjegyzés"
+  "email": {
+    "en": "Email",
+    "hu": "Email"
   },
-  "form_button_send": {
+  "valid_feedback": {
+    "en": "Looks good!",
+    "hu": "Rendben!"
+  },
+  "invalid_feedback": {
+    "en": "Required field!",
+    "hu": "Kötelező mező!"
+  },
+  "hello_title": {
+    "en": "Hello",
+    "hu": "Szia"
+  },
+  "hello_intro": {
+    "en": "Dear guest, thank you for filling out the form.",
+    "hu": "Kedves vendégek, köszönjük, hogy kitöltitek a kérdőívet."
+  },
+  "hello_join_question": {
+    "en": "Can you join us for the Wedding?",
+    "hu": "El tudsz jönni az esküvőnkre?"
+  },
+  "guests_title": {
+    "en": "Guests",
+    "hu": "Vendégek"
+  },
+  "guests_intro": {
+    "en": "Please fill out the details of your guests.",
+    "hu": "Kérlek add meg a vendégeid adatait."
+  },
+  "add_guest_button": {
+    "en": "Add Guest",
+    "hu": "Vendég Hozzáadása"
+  },
+  "age": {
+    "en": "Age",
+    "hu": "Kor"
+  },
+  "adult": {
+    "en": "Adult",
+    "hu": "Felnőtt"
+  },
+  "child_1": {
+    "en": "Child (0-3 yrs)",
+    "hu": "Gyerek (0-3 év)"
+  },
+  "child_2": {
+    "en": "Child (4-12 yrs)",
+    "hu": "Gyerek (4-12 év)"
+  },
+  "details_title": {
+    "en": "Details",
+    "hu": "Részletek"
+  },
+  "details_intro": {
+    "en": "Please answer a few questions.",
+    "hu": "Kérlek válaszolj néhány kérdésre."
+  },
+  "details_question_1": {
+    "en": "Do you need a shuttle service from the Church to the Wedding?",
+    "hu": "Szükséged van transzportra a templomtól a rendezvényházig?"
+  },
+  "details_question_1_helper": {
+    "en": "The distance is about 5 km.",
+    "hu": "A távolság kb. 5 km."
+  },
+  "details_question_2": {
+    "en": "Do you have any special dietary requirements?",
+    "hu": "Van valamilyen ételallergiád vagy ételérzékenységed?"
+  },
+  "details_question_2_helper": {
+    "en": "If yes, please specify.",
+    "hu": "Ha igen, kérlek írd le."
+  },
+  "details_question_3": {
+    "en": "Do you need accomodation after the Wedding?",
+    "hu": "Szükséged van szállásra az esküvő után?"
+  },
+  "details_question_3_helper": {
+    "en": "We have reserved rooms at the Hotel.",
+    "hu": "Foglaltunk szobákat a Hotelben."
+  },
+  "details_how_may_persons": {
+    "en": "How many person does it affect?",
+    "hu": "Hányan főt érint?"
+  },
+  "details_enter_a_number": {
+    "en": "Enter a number",
+    "hu": "Adj meg egy számot"
+  },
+  "details_food_description": {
+    "en": "Describe here how many persons are affected with which food intolerances",
+    "hu": "Itt írd le, hogy pontosan mi és hány főt érint."
+  },
+  "send_button": {
     "en": "Send",
     "hu": "Küldés"
+  },
+  "send_title": {
+    "en": "Just one more click...",
+    "hu": "Egy utolsó kattintás..."
+  },
+  "send_intro": {
+    "en": "Thank you for filling out the form. Please click the button below to send the form, and write a comment if you want to.",
+    "hu": "Köszönjük, hogy kitöltötted a kérdőívet. Kérlek kattints a gombra a küldéshez, és írj egy megjegyzést, ha szeretnél."
+  },
+  "send_comment": {
+    "en": "Comment (Optional)",
+    "hu": "Megjegyzés (Opcionális)"
   }
 }
