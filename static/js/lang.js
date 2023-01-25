@@ -16,16 +16,19 @@ function lang_btn_callback() {
   } else {
     lang_btn.value = "hu";
   }
-  translate(lang_btn.value);
+  $(".container").fadeOut(300, function () {
+    translate(lang_btn.value);
+    $(".container").fadeIn(300);
+  });
 }
 
 $(document).ready(function () {
-    var userLang = navigator.language || navigator.userLanguage;
-    if (userLang.includes("hu")) {
-        document.getElementById("lang_btn").value = "hu";
-        translate("hu");
-    } else {
-        document.getElementById("lang_btn").value = "en";
-        translate("en");
-    }
+  var userLang = navigator.language || navigator.userLanguage;
+  if (userLang.includes("hu")) {
+    document.getElementById("lang_btn").value = "hu";
+    translate("hu");
+  } else {
+    document.getElementById("lang_btn").value = "en";
+    translate("en");
+  }
 });
