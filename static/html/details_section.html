@@ -20,7 +20,7 @@
     </div>
   </div>
   <div id="shuttle_question">
-    <hr class="solid" />
+    <br>
     <div class="row">
       <div class="col">
         <p class="text-body m-0 fw-bold" loc-key="details_how_may_persons"></p>
@@ -57,26 +57,12 @@
     </div>
   </div>
   <div id="food_question">
-    <hr class="solid" />
-<!--    <div class="row">-->
+    <br>
       <div class="form-group mb-3">
     <div class="form-floating mb-0">
       <textarea class="form-control" id="food_comment" rows="3"></textarea>
       <label for="food_comment" loc-key="details_food_description"></label>
     </div>
-<!--  </div>-->
-<!--      <div class="col">-->
-<!--        <p class="text-body m-0 fw-bold" loc-key="details_food_description"></p>-->
-<!--      </div>-->
-<!--      <div class="col-sm">-->
-<!--        <textarea-->
-<!--          class="form-control"-->
-<!--          id="food_comment"-->
-<!--          rows="2"-->
-<!--        ></textarea>-->
-<!--        <div class="valid-feedback" loc-key="valid_feedback"></div>-->
-<!--      <div class="invalid-feedback" loc-key="invalid_feedback"></div>-->
-<!--      </div>-->
     </div>
   </div>
   <hr class="solid" />
@@ -99,7 +85,7 @@
     </div>
   </div>
   <div id="hotel_question">
-    <hr class="solid" />
+    <br>
     <div class="row">
       <div class="col">
         <p class="text-body m-0 fw-bold" loc-key="details_how_may_persons"></p>
@@ -127,27 +113,27 @@
   $(function () {
     $("#shuttle_toggle").change(function () {
       if ($(this).prop("checked")) {
-        $("#shuttle_question").show();
+        $("#shuttle_question").fadeIn();
       } else {
-        $("#shuttle_question").hide();
+        $("#shuttle_question").fadeOut();
       }
     });
   });
   $(function () {
     $("#food_toggle").change(function () {
       if ($(this).prop("checked")) {
-        $("#food_question").show();
+        $("#food_question").fadeIn();
       } else {
-        $("#food_question").hide();
+        $("#food_question").fadeOut();
       }
     });
   });
   $(function () {
     $("#hotel_toggle").change(function () {
       if ($(this).prop("checked")) {
-        $("#hotel_question").show();
+        $("#hotel_question").fadeIn();
       } else {
-        $("#hotel_question").hide();
+        $("#hotel_question").fadeOut();
       }
     });
   });

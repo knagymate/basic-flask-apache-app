@@ -41,11 +41,14 @@
   $(function () {
     $("#join_toggle").change(function () {
       if ($(this).prop("checked")) {
-        $("#guests_section").show();
-        $("#details_section").show();
+        $("#send_section").fadeOut(function() {        $("#send_section").fadeIn();
+        $("#guests_section").fadeIn();
+        $("#details_section").fadeIn();});
       } else {
-        $("#guests_section").hide();
-        $("#details_section").hide();
+        $("#guests_section").fadeOut();
+        $("#details_section").fadeOut();
+        $("#send_section").fadeOut();
+        $("#send_section").fadeIn();
       }
     });
   });

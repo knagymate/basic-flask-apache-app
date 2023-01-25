@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, render_template, request
+from flask import Flask, jsonify, redirect, render_template, request, url_for
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
@@ -7,9 +7,14 @@ app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///project.db"
 db = SQLAlchemy(app)
 
 
+@app.route("/angiesmate")
+def angiesmate():
+    return render_template("index.html")
+
+
 @app.route("/")
 def home():
-    return render_template("index.html")
+    return redirect(url_for("angiesmate"))
 
 
 @app.route("/submit_form", methods=["POST"])

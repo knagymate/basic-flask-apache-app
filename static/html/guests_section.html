@@ -29,6 +29,8 @@
     i = i + 1;
     $("#guest_section").append('<div id="guest_' + i + '"></div>');
     $("#guest_" + i).load("static/html/guest_section.html", function () {
+      $("#guest_" + i).hide()
+      $("#guest_" + i).fadeIn();
       translate(document.getElementById("lang_btn").value);
     });
   });
