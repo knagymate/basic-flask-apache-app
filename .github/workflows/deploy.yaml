@@ -14,7 +14,7 @@ jobs:
     - name: RSYNC Deployment
       uses: burnett01/rsync-deployments@5.2.1
       with:
-        switches: -avzr
+        switches: -avzr --exclude=".github"
         path: /
         remote_path: /var/www/basic-flask-apache-app/
         remote_host: ${{ secrets.SSH_HOST }}
