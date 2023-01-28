@@ -6,55 +6,26 @@ on:
 
   workflow_dispatch:
 
-name: Rsync Deployment
 jobs:
-  deployment:
-    name: Rsync Deployment
+  deploy:
     runs-on: ubuntu-latest
     steps:
-    - name: Debug -> cat
-      run: 'echo ${{secrets.TEST_KEY_2}}'
-    
-    - name: executing remote ssh commands using ssh key
+    - uses: actions/checkout@v2
+    - name: RSYNC Deployment
+      uses: burnett01/rsync-deployments@5.2.1
+      with:
+        switches: -avzr
+        path: /
+        remote_path: /var/www/basic-flask-apache-app/
+        remote_host: ${{ secrets.SSH_HOST }}
+        remote_port: ${{ secrets.SSH_PORT }}
+        remote_user: ${{ secrets.SSH_USER }}
+        remote_key: ${{ secrets.SSH_PRIVATE_KEY }}
+    - name: Restart Apache Server via SSH
       uses: appleboy/ssh-action@v0.1.7
       with:
-        host: 193.160.119.195
-        username: root
-        key: ${{secrets.TEST_KEY_2}}
-        port: 22
-        script: whoami
-#       - name: Check Out Code
-#         uses: actions/checkout@v3
-        
-#       - name: Create SSH key
-#         run: |
-#           mkdir -p ~/.ssh/
-#           echo "$SSH_PRIVATE_KEY" > ../private.key
-#           sudo chmod 600 ../private.key
-#           echo "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
-#         shell: bash
-#         env:
-#           SSH_PRIVATE_KEY: ${{secrets.VPS_PRIVATE_KEY}}
-#           SSH_KNOWN_HOSTS: ${{secrets.VPS_KNOWN_HOSTS}}
-          
-#       - name: SSH Test
-#         run: ssh -vv -i ${{ github.workspace }}/../private.key ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}
-          
-#       - name: Install SSH Key
-#         uses: shimataro/ssh-key-action@v2
-#         with:
-#           key: ${{ secrets.VPS_PRIVATE_KEY }}
-#           known_hosts: 'just-a-placeholder-so-we-dont-get-errors'
-#       - name: Fix known_hosts IP
-#         run: sed -i 's/github.com/${{ secrets.VPS_HOST }}/g' /home/runner/.ssh/known_hosts
-
-#       - name: Fix known_hosts IP
-#         run: ssh-keyscan -H ${{ secrets.VPS_HOST }} >> /home/runner/.ssh/known_hosts
-          
-#       - name: Debug -> List Files
-#         run: 'cat /home/runner/.ssh/known_hosts'
-          
-#       - name: Rsync Deployments Action
-#         run: rsync -avz --dry-run -e "ssh -i $SSH_KEY_PATH" / ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:/var/www/basic-flask-apache-app/
-#         env:
-#           SSH_KEY_PATH: ${{ github.workspace }}/../private.key
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USER }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        port: ${{ secrets.SSH_PORT }}
+        script: systemctl restart apache2
