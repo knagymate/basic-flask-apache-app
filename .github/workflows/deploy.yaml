@@ -26,6 +26,9 @@ jobs:
           SSH_PRIVATE_KEY: ${{secrets.VPS_PRIVATE_KEY}}
           SSH_KNOWN_HOSTS: ${{secrets.VPS_KNOWN_HOSTS}}
           
+      - name: SSH Test
+        run: ssh -vvv -i ${{ github.workspace }}/../private.key ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}
+          
 #       - name: Install SSH Key
 #         uses: shimataro/ssh-key-action@v2
 #         with:
@@ -40,7 +43,7 @@ jobs:
 #       - name: Debug -> List Files
 #         run: 'cat /home/runner/.ssh/known_hosts'
           
-      - name: Rsync Deployments Action
-        run: rsync -avz --dry-run -e "ssh -i $SSH_KEY_PATH" / ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:/var/www/basic-flask-apache-app/
-        env:
-          SSH_KEY_PATH: ${{ github.workspace }}/../private.key
+#       - name: Rsync Deployments Action
+#         run: rsync -avz --dry-run -e "ssh -i $SSH_KEY_PATH" / ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:/var/www/basic-flask-apache-app/
+#         env:
+#           SSH_KEY_PATH: ${{ github.workspace }}/../private.key
