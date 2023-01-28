@@ -27,7 +27,7 @@ jobs:
     - name: Install Poetry Dependencies
       run: poetry install --no-dev
       env:
-        POETRY_VIRTUALENVS_PATH: .venv
+        POETRY_VIRTUALENVS_IN_PROJECT: true
     - name: Deploy App With Rsync
       uses: burnett01/rsync-deployments@5.2.1
       with:
