@@ -21,7 +21,6 @@ jobs:
           switches: -avz --dry-run
           path: /
           remote_path: /var/www/test
-          # The remote host
           remote_host: ${{ secrets.VPS_HOST }}
           remote_user: ${{ secrets.VPS_USER }}
-          remote_key: ${{ secrets.VPS_PRIVATE_KEY }}
+          remote_key: asd
