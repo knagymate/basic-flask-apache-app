@@ -31,4 +31,4 @@ jobs:
         run: 'ls /home/runner/.ssh -la'
           
       - name: Rsync Deployments Action
-        run: rsync -avz --dry-run / ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:/var/www/basic-flask-apache-app/ 
+        run: rsync -avz --dry-run -e "ssh -i /home/runner/.ssh/id_rsa" / ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:/var/www/basic-flask-apache-app/ 
