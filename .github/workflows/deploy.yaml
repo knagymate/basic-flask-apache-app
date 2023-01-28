@@ -20,7 +20,7 @@ jobs:
         installer-parallel: true
         virtualenvs-path: .venv
     - name: Debug -> ls -la
-      run: ls -la
+      run: cd .venv && ls -la
     - name: rsync app deployment
       uses: burnett01/rsync-deployments@5.2.1
       with:
