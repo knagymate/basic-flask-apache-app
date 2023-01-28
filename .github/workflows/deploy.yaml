@@ -21,6 +21,9 @@ jobs:
         env:
           SSH_KEY: ${{secrets.VPS_PRIVATE_KEY}}
           
+      - name: Turn Off known_hosts Check
+        run: ssh -o StrictHostKeychecking=no ${{ secrets.VPS_HOST }}
+          
       - name: Debug -> List Files
         run: 'ls -la'
           
