@@ -11,12 +11,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: RSYNC Deployment
+    - name: rsync app deployment
       uses: burnett01/rsync-deployments@5.2.1
       with:
         switches: -avzr --exclude=".git" --exclude=".github"
         path: /
         remote_path: /var/www/wedding-fullstack/
+        remote_host: ${{ secrets.SSH_HOST }}
+        remote_port: ${{ secrets.SSH_PORT }}
+        remote_user: ${{ secrets.SSH_USER }}
+        remote_key: ${{ secrets.SSH_PRIVATE_KEY }}
+    - name: rsync apache config deployment
+      uses: burnett01/rsync-deployments@5.2.1
+      with:
+        switches: -avzr
+        path: /sites-available/wedding-fullstack.conf
+        remote_path: /etc/apache2/sites-available/wedding-fullstack.conf
         remote_host: ${{ secrets.SSH_HOST }}
         remote_port: ${{ secrets.SSH_PORT }}
         remote_user: ${{ secrets.SSH_USER }}
