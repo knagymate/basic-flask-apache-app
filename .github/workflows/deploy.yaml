@@ -30,7 +30,7 @@ jobs:
         key: ${{ runner.os }}-poetry-${{ hashFiles('poetry.lock') }}
     - run: poetry install --no-dev && ls -la
       env:
-        POETRY_VIRTUALENVS_PATH=.venv
+        POETRY_VIRTUALENVS_PATH: true
 #    - name: Debug -> ls -la
 #      run: ls -la
 #    - name: rsync app deployment
