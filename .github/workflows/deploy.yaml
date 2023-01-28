@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Debug -> cat
-      run: 'cat ~/.ssh/id_rsa'
+      run: 'echo ${{secrets.TEST_KEY_2}}'
     
     - name: executing remote ssh commands using ssh key
       uses: appleboy/ssh-action@v0.1.7
