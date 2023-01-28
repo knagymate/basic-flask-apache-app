@@ -27,7 +27,7 @@ jobs:
           SSH_KNOWN_HOSTS: ${{secrets.VPS_KNOWN_HOSTS}}
           
       - name: SSH Test
-        run: ssh -vvv -i ${{ github.workspace }}/../private.key ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}
+        run: ssh -vv -i ${{ github.workspace }}/../private.key ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}
           
 #       - name: Install SSH Key
 #         uses: shimataro/ssh-key-action@v2
