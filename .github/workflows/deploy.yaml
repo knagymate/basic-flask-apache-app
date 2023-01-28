@@ -28,9 +28,9 @@ jobs:
         path: ~/.cache/pypoetry/virtualenvs
         poetry-version: "1.2.2"
         key: ${{ runner.os }}-poetry-${{ hashFiles('poetry.lock') }}
+    - run: poetry install --no-dev && ls -la
       env:
         POETRY_VIRTUALENVS_IN_PROJECT=true
-    - run: poetry install --no-dev && ls -la
 #    - name: Debug -> ls -la
 #      run: ls -la
 #    - name: rsync app deployment
