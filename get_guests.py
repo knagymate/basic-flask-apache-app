@@ -1,4 +1,4 @@
-from app import Guest, User, app
+from app.app import Guest, User, app
 
 with app.app_context():
     users_json = {}
