@@ -1,11 +1,10 @@
-<!-- <div class="row align-items-center"> -->
 <div class="row">
   <div class="col-6 mb-3">
     <div class="form-floating">
-      <input type="text" class="form-control" id="guest_name_input" required/>
-      <label for="guest_name_input">Name</label>
-      <div class="valid-feedback">Looks good!</div>
-      <div class="invalid-feedback">Required field!</div>
+      <input type="text" class="form-control" id="guest_name_input" required />
+      <label for="guest_name_input" loc-key="name"></label>
+      <div class="valid-feedback" loc-key="valid_feedback"></div>
+      <div class="invalid-feedback" loc-key="invalid_feedback"></div>
     </div>
   </div>
   <div class="col mb-3">
@@ -13,13 +12,12 @@
       <select
         class="form-select"
         id="guest_age_input"
-        aria-label="Floating label select example"
       >
-        <option selected value="1">Adult</option>
-        <option value="2">Child (0-3 yrs)</option>
-        <option value="3">Child (4-12 yrs)</option>
+        <option selected value="1" loc-key="adult"></option>
+        <option value="2" loc-key="child_1"></option>
+        <option value="3" loc-key="child_2"></option>
       </select>
-      <label for="guest_age_input">Select age</label>
+      <label for="guest_age_input"><span loc-key="age"></span></label>
     </div>
   </div>
   <div class="col-auto mb-3 text-center">
@@ -43,11 +41,11 @@
   </div>
 </div>
 <script>
-    $(document).ready(function () {
-      $("button").click(function () {
-        if ($(this)[0].id == "remove_guest_btn") {
-          console.log($(this)[0].id);
-          console.log($(this).parent().parent().parent().remove());
-        }
-      });
+  $(document).ready(function () {
+    $("button").click(function () {
+      if ($(this)[0].id == "remove_guest_btn") {
+        $(this).parent().parent().parent().fadeOut(function() {$(this).remove()});
+      }
     });
+  });
+</script>

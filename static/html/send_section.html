@@ -1,13 +1,11 @@
-<div class="container bg-light p-3 shadow-sm mt-3 rounded-3">
-  <h1>Just one more click...</h1>
-  <p>
-    Please confirm your attendance by clicking the button below. We are looking
-    forward to see you!
+<div class="container p-3 shadow-sm mt-3 rounded-3">
+  <h1 loc-key="send_title"></h1>
+  <p loc-key="send_intro">
   </p>
   <div class="form-group mb-3">
     <div class="form-floating mb-0">
       <textarea class="form-control" id="comment_input" rows="3"></textarea>
-      <label for="comment_input">Comment (Optional)</label>
+      <label for="comment_input" loc-key="send_comment"></label>
     </div>
   </div>
   <div class="col text-center">
@@ -27,7 +25,7 @@
           d="M16 12.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Zm-1.993-1.679a.5.5 0 0 0-.686.172l-1.17 1.95-.547-.547a.5.5 0 0 0-.708.708l.774.773a.75.75 0 0 0 1.174-.144l1.335-2.226a.5.5 0 0 0-.172-.686Z"
         />
       </svg>
-      Send
+      <span loc-key="send_button"></span>
     </button>
   </div>
 </div>

@@ -3,7 +3,7 @@
 
 @font-face {
   font-family: "Darling";
-  src: url("darling.woff") format("woff");
+  src: url("../fonts/darling.woff") format("woff");
 }
 
 * {
@@ -18,11 +18,12 @@ h1 {
   font-family: "Darling", sans-serif;
   font-size: 25pt;
   margin: 10px;
-  color: #344e41;
+  color: #c3a377;
 }
 
-.navbar-brand {
+.navbar-title {
   font-family: "Darling", sans-serif;
+  color: #c3a377;
 }
 
 .btn-primary,

@@ -2,7 +2,7 @@
   --color-1: white;
   --color-2: black;
   --color-3: grey;
-  --transition-time: 0.3s ease-out;
+  --transition-time: 0.5s ease-out;
   --scale-up: scale(1.05);
   --scale-down: scale(0.95);
   --child-width: 30px;
