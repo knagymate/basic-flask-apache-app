@@ -21,11 +21,14 @@ jobs:
         env:
           SSH_KEY: ${{secrets.VPS_PRIVATE_KEY}}
           
-      - name: Turn Off known_hosts Check
-        run: ssh -o StrictHostKeychecking=no ${{ secrets.VPS_HOST }}
+      - name: Install SSH Key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.VPS_PRIVATE_KEY }}
+          known_hosts: 'just-a-placeholder-so-we-dont-get-errors'
           
       - name: Debug -> List Files
         run: 'ls -la'
           
-      - name: Rsync Deployments Action
-        run: rsync -avz --dry-run -e "ssh -i key" / ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:/var/www/basic-flask-apache-app/ 
+#       - name: Rsync Deployments Action
+#         run: rsync -avz --dry-run -e "ssh -i key" / ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:/var/www/basic-flask-apache-app/ 
