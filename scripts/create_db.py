@@ -1,6 +1,6 @@
 import os
 
-from app.app import app, db
+from wedding_fullstack.app import app, db
 
 with app.app_context():
     if os.path.exists("instance/project.db"):

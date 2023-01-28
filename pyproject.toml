@@ -4,6 +4,7 @@ version = "0.1.0"
 description = ""
 authors = ["knagymate <knagymate@gmail.com>"]
 readme = "README.md"
+packages = [{include = "wedding_fullstack"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
