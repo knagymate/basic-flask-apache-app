@@ -16,7 +16,7 @@ jobs:
       with:
         switches: -avzr --exclude=".git" --exclude=".github"
         path: /
-        remote_path: /var/www/basic-flask-apache-app/
+        remote_path: /var/www/wedding-fullstack/
         remote_host: ${{ secrets.SSH_HOST }}
         remote_port: ${{ secrets.SSH_PORT }}
         remote_user: ${{ secrets.SSH_USER }}

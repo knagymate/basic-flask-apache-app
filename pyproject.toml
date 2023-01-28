@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "basic-flask-apache-app"
+name = "wedding-fullstack"
 version = "0.1.0"
 description = ""
 authors = ["knagymate <knagymate@gmail.com>"]
