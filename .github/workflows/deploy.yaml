@@ -14,21 +14,18 @@ jobs:
     steps:
       - name: Check Out Code
         uses: actions/checkout@v3
-        
-#       - name: Write SSH Key To File
-#         run: 'echo "$SSH_KEY" > key'
-#         shell: bash
-#         env:
-#           SSH_KEY: ${{secrets.VPS_PRIVATE_KEY}}
           
       - name: Install SSH Key
         uses: shimataro/ssh-key-action@v2
         with:
           key: ${{ secrets.VPS_PRIVATE_KEY }}
           known_hosts: 'just-a-placeholder-so-we-dont-get-errors'
+      
+      - name: Fix known_hosts IP
+        run: ssh-keyscan -H ${{ secrets.VPS_HOST }} >> /home/runner/.ssh/known_hosts
           
       - name: Debug -> List Files
-        run: 'ls /home/runner/.ssh -la'
+        run: 'cat /home/runner/.ssh/known_hosts'
           
       - name: Rsync Deployments Action
         run: rsync -avz --dry-run -e "ssh -i /home/runner/.ssh/id_rsa" / ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:/var/www/basic-flask-apache-app/ 
