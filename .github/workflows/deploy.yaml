@@ -14,13 +14,15 @@ jobs:
     steps:
       - name: Check Out Code
         uses: actions/checkout@v3
-
+        
+      - name: Write SSH Key To File
+        run: 'echo "$SSH_KEY" > key'
+        shell: bash
+        env:
+          SSH_KEY: ${{secrets.VPS_PRIVATE_KEY}}
+          
+      - name: Debug -> List Files
+        run: 'ls -la'
+          
       - name: Rsync Deployments Action
-        uses: Burnett01/rsync-deployments@5.2.1
-        with:
-          switches: -avz --dry-run
-          path: /
-          remote_path: /var/www/test
-          remote_host: ${{ secrets.VPS_HOST }}
-          remote_user: ${{ secrets.VPS_USER }}
-          remote_key: asd
+        run: rsync -avz --dry-run -e "ssh -i key" / ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:/var/www/basic-flask-apache-app/ 
