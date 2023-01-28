@@ -17,7 +17,7 @@ jobs:
       with:
         host: 193.160.119.195
         username: root
-        key: ${{secrets.TEST_KEY_1}}
+        key: ${{secrets.TEST_KEY_2}}
         port: 22
         script: whoami
 #       - name: Check Out Code
