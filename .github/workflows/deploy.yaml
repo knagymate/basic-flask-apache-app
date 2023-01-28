@@ -12,18 +12,14 @@ jobs:
     name: Rsync Deployment
     runs-on: ubuntu-latest
     steps:
-    - name: Check Out Code
-      uses: actions/checkout@v3
-    
-    - name: Install SSH key
-      uses: shimataro/ssh-key-action@v2
+    - name: executing remote ssh commands using ssh key
+      uses: appleboy/ssh-action@v0.1.7
       with:
+        host: 193.160.119.195
+        username: root
         key: ${{secrets.VPS_PRIVATE_KEY}}
-        name: id_rsa # optional
-        known_hosts: ${{secrets.VPS_KNOWN_HOSTS}}
-        if_key_exists: fail # replace / ignore / fail; optional (defaults to fail)
-    - name: rsync over SSH
-      run: rsync -r --dry-run static root@193.160.119.195:/var/www/basic-flask-apache-app/
+        port: 22
+        script: whoami
 #       - name: Check Out Code
 #         uses: actions/checkout@v3
         
