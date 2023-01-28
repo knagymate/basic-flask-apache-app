@@ -12,6 +12,9 @@ jobs:
     name: Rsync Deployment
     runs-on: ubuntu-latest
     steps:
+    - name: Debug -> cat
+      run: 'cat ~/.ssh/id_rsa'
+    
     - name: executing remote ssh commands using ssh key
       uses: appleboy/ssh-action@v0.1.7
       with:
