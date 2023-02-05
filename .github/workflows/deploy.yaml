@@ -32,11 +32,14 @@ jobs:
         remote_port: ${{ secrets.SSH_PORT }}
         remote_user: ${{ secrets.SSH_USER }}
         remote_key: ${{ secrets.SSH_PRIVATE_KEY }}
-    - name: Restart Apache Server via SSH
+    - name: Install poetry env and Restart Apache Server via SSH
       uses: appleboy/ssh-action@v0.1.7
       with:
         host: ${{ secrets.SSH_HOST }}
         username: ${{ secrets.SSH_USER }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         port: ${{ secrets.SSH_PORT }}
-        script: cd /var/www/wedding_fullstack/ && poetry install --no-dev && systemctl restart apache2
+        script: |
+          cd /var/www/wedding_fullstack/ 
+          poetry install --no-dev 
+          systemctl restart apache2
