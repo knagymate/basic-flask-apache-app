@@ -12,22 +12,6 @@ jobs:
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v2
-    - name: Setup Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: "3.10.7"
-    - name: Setup Poetry
-      uses: Gr1N/setup-poetry@v8
-      with:
-        poetry-version: "1.2.2"
-    - uses: actions/cache@v2
-      with:
-        path: ~/.cache/pypoetry/virtualenvs
-        key: ${{ runner.os }}-poetry-${{ hashFiles('poetry.lock') }}
-    - name: Install Poetry Dependencies
-      run: poetry install --no-dev
-      env:
-        POETRY_VIRTUALENVS_IN_PROJECT: true
     - name: Deploy App With Rsync
       uses: burnett01/rsync-deployments@5.2.1
       with:
@@ -55,4 +39,4 @@ jobs:
         username: ${{ secrets.SSH_USER }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         port: ${{ secrets.SSH_PORT }}
-        script: systemctl restart apache2
+        script: cd /var/www/wedding_fullstack/ $$ poetry install --no-dev $$ systemctl restart apache2
