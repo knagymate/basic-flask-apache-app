@@ -6,4 +6,4 @@ activate_this = "/var/www/wedding_fullstack/.venv/bin/activate_this.py"
 with open(activate_this) as file_:
     exec(file_.read(), dict(__file__=activate_this))
 
-from wedding_fullstack import app as application
+from wedding_fullstack.app import app as application
