@@ -39,4 +39,4 @@ jobs:
         username: ${{ secrets.SSH_USER }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         port: ${{ secrets.SSH_PORT }}
-        script: cd /var/www/wedding_fullstack/ $$ poetry install --no-dev $$ systemctl restart apache2
+        script: cd /var/www/wedding_fullstack/ && poetry install --no-dev && systemctl restart apache2
