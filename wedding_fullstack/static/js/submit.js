@@ -26,16 +26,18 @@
                     guest["age"] = age_arr[index];
                     guests.push(guest);
                 });
-
                 if (!form.checkValidity()) {
                     event.preventDefault();
                     event.stopPropagation();
                 } else {
                     $.ajax({
                         type: "POST",
-                        url: "submit_form",
+                        url: "/submit_form",
                         contentType: "application/json; charset=utf-8",
                         dataType: "json",
+                        cache: false,
+                        async: false,
+                        headers: {"cache-control": "no-cache"},
                         data: JSON.stringify({
                             name: $("#name_input").val(),
                             email: $("#email_input").val(),
