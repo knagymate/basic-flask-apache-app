@@ -1,3 +1,5 @@
+import os
+
 from flask import Flask, redirect, render_template, request, url_for
 from flask_sqlalchemy import SQLAlchemy
 
@@ -34,6 +36,8 @@ def home():
 @app.route("/submit_form", methods=["POST"])
 def handle_form():
     with app.app_context():
+        os.chmod("instance", 0o0777)
+        os.chmod("instance/project.db", 0o0777)
         json = request.json
         user = User(
             name=json.get("name"),
