@@ -25,11 +25,11 @@
   },
   "hello_title": {
     "en": "Hello",
-    "hu": "Szia"
+    "hu": "Kedves Családunk és Barátaink"
   },
   "hello_intro": {
     "en": "Dear guest, thank you for filling out the form.",
-    "hu": "Kedves Családunk és Barátaink! Ahogy már a meghívóban is olvashattátok, szeretettel meghívunk, hogy velünk ünnepeljetek, amikor 2023. június 23-án, pénteken hivatalosan is összekötjük életünket. Szeretnénk hogy minél jobban érezzétek Magatokat, ezért kérünk Benneteket, hogy válaszoljatok néhány kérdésre."
+    "hu": "Kedves Családunk és Barátaink! Ahogy már a meghívóban is olvashattátok, szeretettel meghívunk, hogy velünk ünnepeljetek, amikor 2023. június 23-án, pénteken hivatalosan is összekötjük életünket. Szeretnénk, hogy minél jobban érezzétek Magatokat, ezért kérünk Benneteket, hogy válaszoljatok néhány kérdésre."
   },
   "hello_join_question": {
     "en": "Can you join us for the Wedding?",
@@ -41,7 +41,7 @@
   },
   "guests_intro": {
     "en": "Please fill out the details of your guests.",
-    "hu": "Kikkel érkezel? Kérlek add meg a Ő adataikat."
+    "hu": "Kikkel érkezel? Kérlek, add meg a Ő adataikat."
   },
   "add_guest_button": {
     "en": "Add Guest",
@@ -117,7 +117,7 @@
   },
   "send_intro": {
     "en": "Thank you for filling out the form. Please click the button below to send the form, and write a comment if you want to.",
-    "hu": "Köszönjük, hogy kitöltötted a kérdőívet. Kérlek kattints a gombra a küldéshez, és írj egy megjegyzést, ha szeretnél."
+    "hu": "Köszönjük, hogy kitöltötted a kérdőívet. Kérlek, kattints a lenti gombra a küldéshez, és írj egy megjegyzést, ha szeretnél."
   },
   "send_comment": {
     "en": "Comment (Optional)",
