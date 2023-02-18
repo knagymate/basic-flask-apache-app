@@ -36,8 +36,11 @@ def home():
 @app.route("/submit_form", methods=["POST"])
 def handle_form():
     with app.app_context():
-        os.chmod("instance", 0o0777)
-        os.chmod("instance/project.db", 0o0777)
+        try:
+            os.chmod("/var/www/wedding_fullstack/instance", 0o0777)
+            os.chmod("/var/www/wedding_fullstack/instance/project.db", 0o0777)
+        except Exception as e:
+            print(e)
         json = request.json
         user = User(
             name=json.get("name"),
