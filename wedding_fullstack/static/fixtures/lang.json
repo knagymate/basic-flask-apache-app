@@ -25,11 +25,11 @@
   },
   "hello_title": {
     "en": "Hello",
-    "hu": "Kedves Családunk és Barátaink"
+    "hu": "Kedves"
   },
   "hello_intro": {
     "en": "Dear guest, thank you for filling out the form.",
-    "hu": "Ahogy már a meghívóban is olvashattátok, szeretettel meghívunk, hogy velünk ünnepeljetek, amikor 2023. június 23-án, pénteken hivatalosan is összekötjük életünket. Szeretnénk, hogy minél jobban érezzétek Magatokat, ezért kérünk Benneteket, hogy válaszoljatok néhány kérdésre."
+    "hu": "Családunk és Barátaink!<br>Ahogy már a meghívóban is olvashattátok, szeretettel meghívunk, hogy velünk ünnepeljetek, amikor 2023. június 23-án, pénteken hivatalosan is összekötjük életünket. Szeretnénk, hogy minél jobban érezzétek Magatokat, ezért kérünk Benneteket, hogy válaszoljatok néhány kérdésre."
   },
   "hello_join_question": {
     "en": "Can you join us for the Wedding?",
