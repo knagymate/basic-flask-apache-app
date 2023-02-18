@@ -29,7 +29,7 @@
   },
   "hello_intro": {
     "en": "Dear guest, thank you for filling out the form.",
-    "hu": "Kedves vendégek, köszönjük, hogy kitöltitek a kérdőívet."
+    "hu": "Kedves Családunk és Barátaink! Ahogy már a meghívóban is olvashattátok, szeretettel meghívunk, hogy velünk ünnepeljetek, amikor 2023. június 23-án, pénteken hivatalosan is összekötjük életünket. Szeretnénk hogy minél jobban érezzétek Magatokat, ezért kérünk Benneteket, hogy válaszoljatok néhány kérdésre."
   },
   "hello_join_question": {
     "en": "Can you join us for the Wedding?",
@@ -41,7 +41,7 @@
   },
   "guests_intro": {
     "en": "Please fill out the details of your guests.",
-    "hu": "Kérlek add meg a vendégeid adatait."
+    "hu": "Kikkel érkezel? Kérlek add meg a Ő adataikat."
   },
   "add_guest_button": {
     "en": "Add Guest",
@@ -69,23 +69,23 @@
   },
   "details_intro": {
     "en": "Please answer a few questions.",
-    "hu": "Kérlek válaszolj néhány kérdésre."
+    "hu": "Kérlek, válaszolj néhány kérdésre!"
   },
   "details_question_1": {
     "en": "Do you need a shuttle service from the Church to the Wedding?",
-    "hu": "Szükséged van transzportra a templomtól a rendezvényházig?"
+    "hu": "Szükséged van fuvarra a templomtól a rendezvényházig?"
   },
   "details_question_1_helper": {
     "en": "The distance is about 5 km.",
-    "hu": "A távolság kb. 5 km."
+    "hu": "A távolság kb. 5 km, autóval kb. 15 perc."
   },
   "details_question_2": {
     "en": "Do you have any special dietary requirements?",
-    "hu": "Van valamilyen ételallergiád vagy ételérzékenységed?"
+    "hu": "Van valamilyen ételallergiád vagy ételérzékenységed? Követsz valamilyen speciális étrendet?"
   },
   "details_question_2_helper": {
     "en": "If yes, please specify.",
-    "hu": "Ha igen, kérlek írd le."
+    "hu": "Ha igen, kérlek, írd le, mit nem fogyaszthatsz!"
   },
   "details_question_3": {
     "en": "Do you need accomodation after the Wedding?",
@@ -97,7 +97,7 @@
   },
   "details_how_may_persons": {
     "en": "How many person does it affect?",
-    "hu": "Hányan főt érint?"
+    "hu": "Hány főt érint?"
   },
   "details_enter_a_number": {
     "en": "Enter a number",
