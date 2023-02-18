@@ -43,5 +43,5 @@ jobs:
           cd /var/www/wedding_fullstack/ 
           poetry install --no-dev 
           chmod 777 /var/www/wedding_fullstack/instance
-          sudo chmod 777 /var/www/wedding_fullstack/instance/project.db
+          chmod 777 /var/www/wedding_fullstack/instance/project.db
           systemctl restart apache2
